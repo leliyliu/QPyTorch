@@ -26,5 +26,9 @@ playground/
 *.log 
 logger
 
+# checkpoint
+*.pth 
+*checkpoint*
+
 # python 
 __pycache__
