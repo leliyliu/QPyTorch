@@ -21,3 +21,10 @@ dist
 **/data
 docs/source/examples
 playground/
+
+# log 
+*.log 
+logger
+
+# python 
+__pycache__

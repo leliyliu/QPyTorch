@@ -1,0 +1,3 @@
+[submodule "codebase"]
+	path = codebase
+	url = git@github.com:RICE-EIC/CPT.git

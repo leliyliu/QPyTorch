@@ -1,0 +1,24 @@
+export CUDA_VISIBLE_DEVICES=$1
+python train_with_cifar.py --dataset CIFAR10 \
+       --data_path ~/datasets/cifar-10 \
+       --model VGG16LP \
+       --epochs=200 \
+       --lr_init=0.05 \
+       --wd=5e-4 \
+       --seed 100 \
+       --batch_size 128  \
+       --wl-weight 8 \
+       --wl-grad 8 \
+       --wl-momentum 8 \
+       --wl-activate 8 \
+       --wl-error 8 \
+       --weight-rounding stochastic \
+       --activate-rounding stochastic \
+       --grad-rounding stochastic \
+       --error-rounding stochastic \
+       --momentum-rounding stochastic \
+       --weight-type block \
+       --activate-type block \
+       --grad-type block \
+       --error-type block \
+       --momentum-type block;

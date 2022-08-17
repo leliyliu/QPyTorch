@@ -75,7 +75,7 @@ def quantizer(
         A quantization function as specified (torch.Tensor -> torch.Tensor)
     """
 
-    for rounding in [forward_rounding, backward_rounding]:
+    for rounding in [forward_rounding, backward_rounding]: # 在这里补充相应的 rounding 类型
         assert rounding in ["stochastic", "nearest",], "invalid rounding type {:s}".format(rounding)
     for num in [forward_number, backward_number]:
         if num != None:
@@ -198,7 +198,7 @@ def quantizer(
                     if backward_number == None:
                         grad_input = grad_output
                     else:
-                        quant_module = get_module(grad_output)
+                        quant_module = get_module(grad_output) # 获得其具体定义的位置
                         # grad_output = grad_output.contiguous().masked_fill_(self.mask, 0)
                         for f in backward_hooks:
                             grad_output = f(grad_output)
