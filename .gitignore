@@ -25,6 +25,8 @@ playground/
 # log 
 *.log 
 logger
+wandb
+logs 
 
 # checkpoint
 *.pth 

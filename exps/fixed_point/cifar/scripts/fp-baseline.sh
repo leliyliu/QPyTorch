@@ -1,0 +1,2 @@
+export CUDA_VISIBLE_DEVICES=$1
+python train.py --save_folder ./logs --arch cifar100_resnet_74 --workers 4 --dataset cifar100 --datadir ~/datasets/cifar-100 --experiment_name "distribution-analysis" --scenario_name "fp-training"

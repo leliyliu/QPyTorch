@@ -1,0 +1,9 @@
+[submodule "codebase/cpt"]
+	path = codebase/cpt
+	url = git@github.com:RICE-EIC/CPT.git
+[submodule "codebase/block_minifloat"]
+	path = codebase/block_minifloat
+	url = git@github.com:sfox14/block_minifloat.git
+[submodule "codebase/swalp"]
+	path = codebase/swalp
+	url = git@github.com:stevenygd/SWALP.git

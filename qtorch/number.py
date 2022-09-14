@@ -1,4 +1,4 @@
-__all__ = ["Number", "FixedPoint", "BlockFloatingPoint", "FloatingPoint"]
+__all__ = ["Number", "FixedPoint", "BlockFloatingPoint", "FloatingPoint", "FAST_BFP"]
 
 
 class Number:
@@ -131,3 +131,25 @@ class BlockFloatingPoint(Number):
 
     def __repr__(self):
         return "BlockFloatingPoint (wl={:d}, dim={:d})".format(self.wl, self.dim)
+
+class FAST_BFP(Number):
+    def __init__(self, exp, man, group=16):
+        assert 8 >= exp >= -1, "invalid bits for exponent:{}".format(exp)
+        assert 23 >= man >= -1, "invalid bits for mantissa:{}".format(man)
+        self.exp = exp
+        self.man = man
+        self.group = group
+
+    def __str__(self):
+        if (self.exp == -1 or self.man == -1):
+            return "Default (pytorch fp32)"
+        else:
+            return "FAST_BFP (exponent={:d}, mantissa={:d}, group={:d})".format(
+                self.exp, self.man, self.group)
+    
+    def __repr__(self):
+        if (self.exp == -1 or self.man == -1):
+            return "Default (pytorch fp32)"
+        else:
+            return "FAST_BFP (exponent={:d}, mantissa={:d}, group={:d})".format(
+                self.exp, self.man, self.group)
